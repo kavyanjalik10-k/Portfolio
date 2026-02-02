@@ -4,13 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kavyanjali K | Portfolio</title>
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       line-height: 1.6;
       color: #222;
-      background:#f5f7fb;
+      background: #f5f7fb;
       overflow-x: hidden;
     }
 
@@ -20,141 +26,174 @@
       padding: 70px 20px;
       text-align: center;
     }
-    header h1 { font-size: 2.6rem; letter-spacing: 1px; }
-    header p { font-size: 1.1rem; margin-top: 12px; }
+
+    header h1 {
+      font-size: 2.6rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 12px;
+    }
+
     header a {
       color: #fff;
       margin: 8px;
       text-decoration: none;
       font-weight: 600;
       padding: 8px 16px;
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 1px solid rgba(255, 255, 255, 0.4);
       border-radius: 30px;
-      display:inline-block;
+      display: inline-block;
       transition: all 0.3s ease;
     }
-    header a:hover { background:#fff; color:#4f46e5; }
 
-    section { padding: 70px 20px; max-width: 1100px; margin: auto; animation: fadeUp 1s ease; }
-    h2 { color: #1f3c88; margin-bottom: 25px; font-size: 1.9rem; text-align:center; }
+    header a:hover {
+      background: #fff;
+      color: #4f46e5;
+    }
 
-    .skills, .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeUp 1s ease;
+    }
+
+    h2 {
+      color: #1f3c88;
+      margin-bottom: 25px;
+      font-size: 1.9rem;
+      text-align: center;
+    }
+
+    .skills,
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
 
     .card {
       border-radius: 18px;
       padding: 25px;
       background: #ffffff;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
 
-    /* Skill bars */
-    .skill { margin-bottom: 15px; }
-    .skill span { font-weight:600; }
-    .bar { background:#e5e7eb; border-radius:20px; overflow:hidden; margin-top:6px; }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .skill {
+      margin-bottom: 15px;
+    }
+
+    .skill span {
+      font-weight: 600;
+    }
+
+    .bar {
+      background: #e5e7eb;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
     .bar div {
-      height:10px;
-      background: linear-gradient(90deg,#4f46e5,#06b6d4);
-      width:0;
+      height: 10px;
+      background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      width: 0;
       animation: grow 2s forwards;
     }
 
-    /* Projects */
-    .project-img { width:100%; border-radius:14px; margin-bottom:12px; }
+    .project-img {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
 
-    /* Contact form */
-    form {
-      max-width:480px;
-      width:100%;
-      margin: auto;
-      padding: 10px;
+    section a {
+      color: #4f46e5;
+      font-weight: 600;
+      text-decoration: none;
     }
-    input, textarea {
-      width:100%;
-      padding:12px;
-      margin:10px 0;
-      border-radius:12px;
-      border:1px solid #ccc;
-      font-size:1rem;
-      box-sizing:border-box;
+
+    section a:hover {
+      text-decoration: underline;
     }
-    button {
-      width:100%; padding:12px;
-      border:none; border-radius:30px;
-      background: linear-gradient(135deg,#4f46e5,#06b6d4);
-      color:#fff; font-size:1rem; font-weight:600;
-      cursor:pointer;
-    }
-    button:hover { opacity:0.9; }
 
     footer {
-      background: linear-gradient(135deg,#4f46e5,#06b6d4);
-      color:#fff;
-      text-align:center;
-      padding:22px 12px;
-      margin-top:40px;
-      width:100%;
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: #fff;
+      text-align: center;
+      padding: 22px 12px;
+      margin-top: 40px;
     }
 
-    @keyframes grow { from { width:0; } to { width:var(--level); } }
-    @keyframes fadeUp { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
-
-    /* Mobile polish */
-    @media(max-width:600px){
-      html, body { width:100%; overflow-x:hidden; }
-
-      header { padding:45px 14px; }
-      header h1 { font-size:1.9rem; }
-      header p { font-size:0.95rem; }
-
-      h2 { font-size:1.45rem; }
-      section { padding:40px 14px; }
-
-      .skills, .projects { grid-template-columns:1fr; }
-      .card { padding:18px; }
-
-      ul { padding-left:18px; }
-
-      form { max-width:100%; }
-      textarea { min-height:120px; }
-      button { width:100%; font-size:1rem; padding:13px; }
-
-      footer { font-size:0.8rem; padding:18px 10px; }
+    @keyframes grow {
+      from { width: 0; }
+      to { width: var(--level); }
     }
-      header h1 { font-size:2rem; }
-      header p { font-size:1rem; }
-      header a { margin:6px 4px; padding:6px 14px; font-size:0.9rem; }
 
-      h2 { font-size:1.5rem; }
-      section { padding:45px 14px; }
-
-      .skills, .projects { grid-template-columns:1fr; }
-      .card { padding:20px; }
-
-      ul { padding-left:16px; }
-
-      /* Contact form mobile fix */
-      form { width:100%; }
-      input, textarea { font-size:0.95rem; padding:11px; }
-      textarea { min-height:110px; }
-      button { font-size:1rem; padding:12px; }
-
-      footer { font-size:0.85rem; padding:20px; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-      h2 { font-size:1.6rem; }
-      section { padding:50px 16px; }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 45px 14px;
+      }
+
+      header h1 {
+        font-size: 1.9rem;
+      }
+
+      header p {
+        font-size: 0.95rem;
+      }
+
+      header a {
+        font-size: 0.9rem;
+        padding: 6px 14px;
+      }
+
+      h2 {
+        font-size: 1.45rem;
+      }
+
+      section {
+        padding: 40px 14px;
+      }
+
+      .skills,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      footer {
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Kavyanjali K</h1>
   <p>Computer Science Engineer | Data Analyst | Web Developer</p>
   <p>
-    <a href="https://www.linkedin.com/in/kavyanjali-k-/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-    <a href="https://github.com/kavyanjalik10-k" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/kavyanjali-k-/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/kavyanjalik10-k" target="_blank">GitHub</a>
     <a href="mailto:kavyanjalik47@gmail.com">Email</a>
   </p>
 </header>
@@ -162,10 +201,11 @@
 <section>
   <h2>About Me</h2>
   <p>
-    I am a Computer Science Engineering graduate with a strong foundation in data analysis, statistics, and database management. 
-    I have hands-on experience in SQL, Excel, Python, and Power BI for data cleaning, analysis, and visualization. 
-    I also enjoy building web applications using Java, React, and MySQL. 
-    I am seeking an entry-level role where I can contribute to data-driven decision-making and continue learning.
+    I am a Computer Science Engineering graduate with a strong foundation in data analysis,
+    statistics, and database management. I have hands-on experience in SQL, Excel, Python,
+    and Power BI for data cleaning, analysis, and visualization. I also enjoy building
+    web applications using Java, React, and MySQL. I am seeking an entry-level role where
+    I can contribute to data-driven decision-making and continue learning.
   </p>
 </section>
 
@@ -178,6 +218,7 @@
       <div class="skill"><span>Power BI</span><div class="bar"><div style="--level:75%"></div></div></div>
       <div class="skill"><span>Excel</span><div class="bar"><div style="--level:80%"></div></div></div>
     </div>
+
     <div class="card">
       <div class="skill"><span>HTML & CSS</span><div class="bar"><div style="--level:85%"></div></div></div>
       <div class="skill"><span>JavaScript & React</span><div class="bar"><div style="--level:75%"></div></div></div>
@@ -188,6 +229,7 @@
 
 <section>
   <h2>Internship Experience</h2>
+
   <div class="card">
     <h3>Full Stack Developer Intern – TechCiti Technologies</h3>
     <ul>
@@ -196,7 +238,9 @@
       <li>Integrated MySQL database using JDBC</li>
     </ul>
   </div>
-  <br />
+
+  <br>
+
   <div class="card">
     <h3>Frontend Developer Intern – Quetech Solutions</h3>
     <ul>
@@ -210,13 +254,14 @@
   <h2>Projects</h2>
   <div class="projects">
     <div class="card">
-      <img src="images/cervical-cancer-detection.png" class="project-img" alt="Cervical Cancer Detection Result" />
+      <img src="images/cervical-cancer-detection.png" class="project-img" alt="Cervical Cancer Detection">
       <h3>Cervical Cancer Detection using Deep Learning</h3>
       <p>Deep learning diagnostic system using CNN and transfer learning models for early detection.</p>
       <a href="https://github.com/kavyanjalik10-k" target="_blank">View on GitHub</a>
     </div>
+
     <div class="card">
-      <img src="https://via.placeholder.com/400x220" class="project-img" alt="Pharmacy Management System" />
+      <img src="https://via.placeholder.com/400x220" class="project-img" alt="Pharmacy Management System">
       <h3>Pharmacy Management System</h3>
       <p>Web-based system for inventory, sales tracking, and customer management.</p>
       <a href="https://github.com/kavyanjalik10-k" target="_blank">View on GitHub</a>
@@ -225,24 +270,28 @@
 </section>
 
 <section>
-  <h2>Certifications & Achievements</h2>
-  <ul>
-    <li>RPA Developer Foundation – UIPath (2023)</li>
-    <li>GenAI Powered Data Analytics Job Simulation – Tata (2025)</li>
-    <li>TCS iON Career Edge – Young Professional (2025)</li>
-    <li>Data Analytics Essentials Issued by Cisco</li>
-    <li>Participant – DevolopHer Coding Competition (2024)</li>
-  </ul>
-</section>
-
-<section>
   <h2>Contact Me</h2>
-  <form action="https://formsubmit.co/kavyanjalik47@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <div class="card" style="max-width:500px; margin:auto; text-align:center;">
+    <p><strong>Email</strong><br>
+      <a href="mailto:kavyanjalik47@gmail.com">kavyanjalik47@gmail.com</a>
+    </p>
+
+    <p style="margin-top:15px;"><strong>LinkedIn</strong><br>
+      <a href="https://www.linkedin.com/in/kavyanjali-k-/" target="_blank">
+        linkedin.com/in/kavyanjali-k-
+      </a>
+    </p>
+
+    <p style="margin-top:15px;"><strong>GitHub</strong><br>
+      <a href="https://github.com/kavyanjalik10-k" target="_blank">
+        github.com/kavyanjalik10-k
+      </a>
+    </p>
+
+    <p style="margin-top:15px;"><strong>Location</strong><br>
+      Karnataka, India
+    </p>
+  </div>
 </section>
 
 <footer>
