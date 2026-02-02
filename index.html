@@ -6,7 +6,13 @@
   <title>Kavyanjali K | Portfolio</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #222; background:#f5f7fb; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background:#f5f7fb;
+      overflow-x: hidden;
+    }
 
     header {
       background: linear-gradient(135deg, #4f46e5, #06b6d4);
@@ -58,11 +64,20 @@
     .project-img { width:100%; border-radius:14px; margin-bottom:12px; }
 
     /* Contact form */
-    form { max-width:500px; margin: auto; }
+    form {
+      max-width:480px;
+      width:100%;
+      margin: auto;
+      padding: 10px;
+    }
     input, textarea {
-      width:100%; padding:12px; margin:10px 0;
-      border-radius:10px; border:1px solid #ccc;
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border-radius:12px;
+      border:1px solid #ccc;
       font-size:1rem;
+      box-sizing:border-box;
     }
     button {
       width:100%; padding:12px;
@@ -75,7 +90,11 @@
 
     footer {
       background: linear-gradient(135deg,#4f46e5,#06b6d4);
-      color:#fff; text-align:center; padding:25px; margin-top:40px;
+      color:#fff;
+      text-align:center;
+      padding:22px 12px;
+      margin-top:40px;
+      width:100%;
     }
 
     @keyframes grow { from { width:0; } to { width:var(--level); } }
@@ -83,7 +102,26 @@
 
     /* Mobile polish */
     @media(max-width:600px){
-      header { padding:50px 16px; }
+      html, body { width:100%; overflow-x:hidden; }
+
+      header { padding:45px 14px; }
+      header h1 { font-size:1.9rem; }
+      header p { font-size:0.95rem; }
+
+      h2 { font-size:1.45rem; }
+      section { padding:40px 14px; }
+
+      .skills, .projects { grid-template-columns:1fr; }
+      .card { padding:18px; }
+
+      ul { padding-left:18px; }
+
+      form { max-width:100%; }
+      textarea { min-height:120px; }
+      button { width:100%; font-size:1rem; padding:13px; }
+
+      footer { font-size:0.8rem; padding:18px 10px; }
+    }
       header h1 { font-size:2rem; }
       header p { font-size:1rem; }
       header a { margin:6px 4px; padding:6px 14px; font-size:0.9rem; }
@@ -172,7 +210,7 @@
   <h2>Projects</h2>
   <div class="projects">
     <div class="card">
-      <img src="https://via.placeholder.com/400x220" class="project-img" alt="Cervical Cancer Detection" />
+      <img src="images/cervical-cancer-detection.png" class="project-img" alt="Cervical Cancer Detection Result" />
       <h3>Cervical Cancer Detection using Deep Learning</h3>
       <p>Deep learning diagnostic system using CNN and transfer learning models for early detection.</p>
       <a href="https://github.com/kavyanjalik10-k" target="_blank">View on GitHub</a>
