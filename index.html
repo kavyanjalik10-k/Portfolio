@@ -6,24 +6,87 @@
   <title>Kavyanjali K | Portfolio</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #222; }
-    header { background: #1f3c88; color: #fff; padding: 50px 20px; text-align: center; }
-    header h1 { font-size: 2.5rem; }
-    header p { font-size: 1.1rem; margin-top: 10px; }
-    header a { color: #ffdd57; margin: 0 10px; text-decoration: none; font-weight: bold; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #222; background:#f5f7fb; }
 
-    section { padding: 50px 20px; max-width: 1000px; margin: auto; }
-    h2 { color: #1f3c88; margin-bottom: 20px; font-size: 1.8rem; }
+    header {
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: #fff;
+      padding: 70px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 2.6rem; letter-spacing: 1px; }
+    header p { font-size: 1.1rem; margin-top: 12px; }
+    header a {
+      color: #fff;
+      margin: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 30px;
+      display:inline-block;
+      transition: all 0.3s ease;
+    }
+    header a:hover { background:#fff; color:#4f46e5; }
 
-    .skills, .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { border: 1px solid #ddd; border-radius: 10px; padding: 20px; background: #fafafa; }
-    .card h3 { margin-bottom: 10px; color: #333; }
-    .card p { font-size: 0.95rem; }
-    .card a { display: inline-block; margin-top: 10px; color: #1f3c88; text-decoration: none; font-weight: bold; }
+    section { padding: 70px 20px; max-width: 1100px; margin: auto; animation: fadeUp 1s ease; }
+    h2 { color: #1f3c88; margin-bottom: 25px; font-size: 1.9rem; text-align:center; }
 
-    ul { margin-left: 20px; }
+    .skills, .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
 
-    footer { background: #f4f4f4; text-align: center; padding: 20px; margin-top: 40px; }
+    .card {
+      border-radius: 18px;
+      padding: 25px;
+      background: #ffffff;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+
+    /* Skill bars */
+    .skill { margin-bottom: 15px; }
+    .skill span { font-weight:600; }
+    .bar { background:#e5e7eb; border-radius:20px; overflow:hidden; margin-top:6px; }
+    .bar div {
+      height:10px;
+      background: linear-gradient(90deg,#4f46e5,#06b6d4);
+      width:0;
+      animation: grow 2s forwards;
+    }
+
+    /* Projects */
+    .project-img { width:100%; border-radius:14px; margin-bottom:12px; }
+
+    /* Contact form */
+    form { max-width:500px; margin: auto; }
+    input, textarea {
+      width:100%; padding:12px; margin:10px 0;
+      border-radius:10px; border:1px solid #ccc;
+      font-size:1rem;
+    }
+    button {
+      width:100%; padding:12px;
+      border:none; border-radius:30px;
+      background: linear-gradient(135deg,#4f46e5,#06b6d4);
+      color:#fff; font-size:1rem; font-weight:600;
+      cursor:pointer;
+    }
+    button:hover { opacity:0.9; }
+
+    footer {
+      background: linear-gradient(135deg,#4f46e5,#06b6d4);
+      color:#fff; text-align:center; padding:25px; margin-top:40px;
+    }
+
+    @keyframes grow { from { width:0; } to { width:var(--level); } }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
+
+    /* Mobile polish */
+    @media(max-width:600px){
+      header h1 { font-size:2.1rem; }
+      h2 { font-size:1.6rem; }
+      section { padding:50px 16px; }
+    }
   </style>
 </head>
 <body>
@@ -32,7 +95,7 @@
   <h1>Kavyanjali K</h1>
   <p>Computer Science Engineer | Data Analyst | Web Developer</p>
   <p>
-    <a href="https://www.linkedin.com/in/kavyanjali-k-" target="_blank">LinkedIn</a> |
+    <a href="https://www.linkedin.com/in/kavyanjali-k-/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
     <a href="https://github.com/kavyanjalik10-k" target="_blank">GitHub</a> |
     <a href="mailto:kavyanjalik47@gmail.com">Email</a>
   </p>
@@ -52,16 +115,15 @@
   <h2>Skills</h2>
   <div class="skills">
     <div class="card">
-      <h3>Data & Analytics</h3>
-      <p>SQL, MS Excel, Power BI, Python, Pandas, NumPy, Data Cleaning, Visualization</p>
+      <div class="skill"><span>Python</span><div class="bar"><div style="--level:85%"></div></div></div>
+      <div class="skill"><span>SQL</span><div class="bar"><div style="--level:80%"></div></div></div>
+      <div class="skill"><span>Power BI</span><div class="bar"><div style="--level:75%"></div></div></div>
+      <div class="skill"><span>Excel</span><div class="bar"><div style="--level:80%"></div></div></div>
     </div>
     <div class="card">
-      <h3>Web Development</h3>
-      <p>HTML, CSS, JavaScript, React JS, Java, JSP, Servlets, PHP, MySQL</p>
-    </div>
-    <div class="card">
-      <h3>Machine Learning</h3>
-      <p>Scikit-learn, CNN, Transfer Learning, Data Preprocessing, Predictive Modeling</p>
+      <div class="skill"><span>HTML & CSS</span><div class="bar"><div style="--level:85%"></div></div></div>
+      <div class="skill"><span>JavaScript & React</span><div class="bar"><div style="--level:75%"></div></div></div>
+      <div class="skill"><span>Java & MySQL</span><div class="bar"><div style="--level:70%"></div></div></div>
     </div>
   </div>
 </section>
@@ -90,19 +152,15 @@
   <h2>Projects</h2>
   <div class="projects">
     <div class="card">
+      <img src="https://via.placeholder.com/400x220" class="project-img" alt="Cervical Cancer Detection" />
       <h3>Cervical Cancer Detection using Deep Learning</h3>
-      <p>
-        Deep learning–based diagnostic system using CNN and transfer learning models 
-        (ResNet50, MobileNet, DenseNet) to support early cervical cancer detection.
-      </p>
+      <p>Deep learning diagnostic system using CNN and transfer learning models for early detection.</p>
       <a href="https://github.com/kavyanjalik10-k" target="_blank">View on GitHub</a>
     </div>
     <div class="card">
+      <img src="https://via.placeholder.com/400x220" class="project-img" alt="Pharmacy Management System" />
       <h3>Pharmacy Management System</h3>
-      <p>
-        Web-based pharmacy management system with inventory control, sales tracking, 
-        and customer record management using MySQL.
-      </p>
+      <p>Web-based system for inventory, sales tracking, and customer management.</p>
       <a href="https://github.com/kavyanjalik10-k" target="_blank">View on GitHub</a>
     </div>
   </div>
@@ -120,10 +178,13 @@
 </section>
 
 <section>
-  <h2>Contact</h2>
-  <p>Email: kavyanjalik47@gmail.com</p>
-  <p>Phone: +91 8431230583</p>
-  <p>Location: Huvina Hadagali, India</p>
+  <h2>Contact Me</h2>
+  <form action="https://formsubmit.co/kavyanjalik47@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
 
 <footer>
